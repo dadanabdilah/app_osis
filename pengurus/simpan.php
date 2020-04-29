@@ -1,5 +1,6 @@
 <?php
-    include '../app/config.php';
+    include '../app/config/config.php';
+    include '../app/config/variabel.php';
     // menyimpan data kedalam variabel
     date_default_timezone_set('Asia/Jakarta');
     $nis   = $_POST['TxtNis'];
@@ -10,8 +11,8 @@
 	
     // query SQL untuk insert data
     $query="INSERT INTO pengurus SET nis='$nis',nama='$nama',jenisKelamin='$jenisKelamin',jabatan='$jabatan',kelas='$kelas'";
-    mysqli_query($koneksi, $query); 
+    mysqli_query($koneksi, $query)or die(mysqli_error($koneksi)); 
     //mengalihkan ke halaman index.php
     echo '<script>alert("Data Berhasil Disimpan!")</script>';
-    header("Location:http://localhost/ngacakan/pengurus");
+    header("Location:" . base_url . "/pengurus");
 ?>

@@ -1,4 +1,6 @@
 <?php
+	include('../app/config/config.php');
+	include('../app/config/variabel.php');
 	include('../templates/header.php');
 	include('../templates/menu.php')
 ?>
@@ -8,21 +10,20 @@
     <h3 class="text-center">TAHUN <?= date('Y');?></h3>
     <p class="mt-5">
       <button type="button" class="btn btn-primary btn-sm mb-2 float-right" data-toggle="modal" data-target="#pembinaTambahModal">Tambah</button>
-      <a href="hapusAll.php"class="btn btn-danger btn-sm mb-2 float-right mr-2">Hapus Semua</a>
+      <a href="<?= base_url ?>/pembina/hapusAll.php"class="btn btn-danger btn-sm mb-2 float-right mr-2">Hapus Semua</a>
     </p>
     <table class="table table-hover table-striped">
         <thead>
             <tr>
-                <th class='text-center' scope="col" width=1% width=1%>No.</th>
-                <th class='text-center' scope="col">NIP</th>
-                <th class='text-center' scope="col">Nama</th>
-                <th class='text-center' scope="col" width=15%>Jenis Kelamin</th>
-                <th class='text-center' width=10%>Aksi</th>
+                <th class="text-center" scope="col" width=1% width=1%>No.</th>
+                <th class="text-center" scope="col">NIP</th>
+                <th class="text-center" scope="col">Nama</th>
+                <th class="text-center" scope="col" width=15%>Jenis Kelamin</th>
+                <th class="text-center" width=10%>Aksi</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            include('../app/config/config.php');
             $sql_query=mysqli_query($koneksi,"SELECT * FROM pembina ORDER BY nama ASC");
                 $noUrut=0;
                 while($data=mysqli_fetch_array($sql_query)){
@@ -59,19 +60,19 @@
         <form method="POST" action="simpan.php">
             <p class="">NIP</br>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="TxtNis" size="30" placeholder="NIP"/>
+                    <input type="text" class="form-control" name="nip" size="30" placeholder="NIP"/>
                 </div>
             </p>
             
             <p class="">Nama</br>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="TxtNama" size="30" placeholder="Nama Lengkap"/>
+                    <input type="text" class="form-control" name="nama" size="30" placeholder="Nama Lengkap"/>
                 </div>
             </p>
 
             <p>Jenis Kelamin</br>
-                <input type="radio" value="L"checked" name="TxtJenisKelamin">Laki-Laki
-                <input type="radio" value="P"" name="TxtJenisKelamin">Perempuan
+                <input type="radio" value="L" checked name="jk">Laki-Laki
+                <input type="radio" value="P" name="jk">Perempuan
             </p>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

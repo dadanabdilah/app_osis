@@ -1,4 +1,6 @@
 <?php
+    include('../app/config/config.php');
+    include('../app/config/variabel.php');
     include('../templates/header.php');
     include('../templates/menu.php');
 ?>
@@ -21,7 +23,6 @@
         </thead>
         <tbody>
             <?php
-                include('../app/config.php');
                 $sql_query=mysqli_query($koneksi,"SELECT `user`.*, `user_level`.`level`
                                                   FROM `user`
                                                   JOIN `user_level` ON `id_level` = `user_level`.`id`");
@@ -87,7 +88,10 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Kelas :</label>
                 <select class="form-control"name="TxtKelas">
-                    <?=kelas;?>
+                    <option selected disabled>Pilih Kelas</option>
+                    <?php foreach(kelas as $kelas):?>
+                        <option value="<?= $kelas ?>"><?= $kelas ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
           <div class="modal-footer">

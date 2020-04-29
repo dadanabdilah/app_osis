@@ -1,5 +1,6 @@
 <?php
-	include('../app/config.php');
+	include('../app/config/config.php');
+    include('../app/config/variabel.php');
     include('../templates/header.php');
     include('../templates/menu.php');
 
@@ -10,7 +11,7 @@
 <div class="container-fluid">
     <h2 class="text-center">User Update</h2>
 	<hr>
-    <form method="POST" action="simpanUpdate.php".php">
+    <form method="POST" action="simpanUpdate.php">
 		<div class="row justify-content-center">
 			<div class="col-lg-8">
 				<div class="form-group">

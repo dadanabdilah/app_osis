@@ -1,5 +1,6 @@
 <?php
     include('../app/config/config.php');
+    include('../app/config/variabel.php');
     //query tambahan WHERE `kelas`='$kelasPelanggar' AND month(tanggal_melanggar)='$bulanMelanggar' AND year(tanggal_melanggar)='$tahunMelanggar'
     $sql_query=mysqli_query($koneksi,"SELECT `siswa`.`nama`,`siswa`.`jk`,`siswa`.`kelas`,
                     `pelanggaran`.`input_at`,`pelanggaran`.`nama_pengurus`,`pelanggaran`.`nis_pelanggar`,
@@ -67,17 +68,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" target="blank" action="print.php">
+        <form method="POST" target="blank" action="<?= base_url ?>/laporan/print.php">
             <p class="text">Silahkan pilih kelas bulan dan tahun!</p>
                 <div class="form-group row ">
                     <div class="form-group col-3">
                         <select class="form-control" height=6% name="kelas">
-                            <?= kelas;?>
+                            <option selected disabled>Pilih Kelas</option>
+                            <?php foreach(kelas as $kelas): ?>
+                                <option value="<?= $kelas ?>"><?= $kelas ?></option>
+                            <?php endforeach ?>
                         </select>
                     </div>
                     <div class="form-group col-3">
                         <select class="form-control" name="bulan">
-                            <option>Bulan</option>
+                            <option selected disabled>Bulan</option>
                                 <?php
                                     for($awal=1; $awal<=12; $awal++){
                                         if($awal<=9){
@@ -92,7 +96,7 @@
 
                     <div class="form-group col-3">
                         <select class="form-control" name="tahun">
-                            <option>Tahun</option>
+                            <option selected disabled>Tahun</option>
                             <?php
                                 for($awal=2020; $awal>=2015; $awal--){
                                     if($awal<=9){
