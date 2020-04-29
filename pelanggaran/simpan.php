@@ -1,6 +1,7 @@
 <?php
     session_start();
     include('../app/config/config.php');
+    include('../app/config/variabel.php');
     // menyimpan data kedalam variabel
     date_default_timezone_set('Asia/Jakarta');
     $tanggal    = date("Y-m-d H:i:s");
@@ -14,6 +15,6 @@
     mysqli_query($koneksi, $query) or die(mysqli_error($koneksi)); 
     //mengalihkan ke halaman index.php
     echo '<script>alert("Data Berhasil Disimpan!")</script>';
-    header("Location:http://localhost/ngacakan/pelanggaran");
+    header("Location:" . base_url . "/pelanggaran");
     //echo '<meta http-equiv="refresh" content="0;url=">';
 ?>

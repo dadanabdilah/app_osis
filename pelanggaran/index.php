@@ -1,4 +1,6 @@
 <?php
+    include('../app/config/config.php');
+    include('../app/config/variabel.php');
 	include('../templates/header.php');
 	include('../templates/menu.php');
 ?>
@@ -29,7 +31,6 @@
         </thead>
         <tbody>
             <?php
-            include('../app/config/config.php');
 			$TglHariIni=date('Y-m-d');
                 $sql_query=mysqli_query($koneksi,"SELECT `siswa`.`nama`,`siswa`.`jk`,`siswa`.`kelas`,
                     `pelanggaran`.`input_at`,`pelanggaran`.`nama_pengurus`,`pelanggaran`.`nis_pelanggar`,
