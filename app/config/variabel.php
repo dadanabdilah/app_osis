@@ -1,6 +1,6 @@
 <?php
 	//bagian base_url biarkan saja jangan diganti.
-	define('base_url','http://localhost/app_osis');
+	define('base_url','http://localhost/app_osis/public');
 	
 	define('tahun_ajaran','2019-2020');
 	
