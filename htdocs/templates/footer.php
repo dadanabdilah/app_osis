@@ -15,5 +15,11 @@
 			    $('#tabel_export').DataTable();
 			} );
 		</script>
+
+		<!-- script src="<?= base_url ?>/js/js-nya.js></script>" -->
+
+		<?php foreach($config['js'][$path] as $value):?>
+			<script src="<?= base_url . '/js/' . $value ?>.js"></script>
+		<?php endforeach ?>
 	</body>
 </html>

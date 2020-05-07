@@ -2,27 +2,28 @@
 session_start();
 
 $url = parseURL();
-$group = 'home';
-$file = 'index';
 
-if (isset($url[0])) {
-    $group = $url[0];
-}
+// Default file dan folder
+$folder = (isset($url[0])) ? $url[0] : $config['default']['file'];
+$file = (isset($url[1])) ? $url[1] : $config['default']['folder'];
 
-if (isset($url[1])) {
-    $file = $url[1];
-}
+$path = $folder . '/' . $file;
 
-require_once '../views/templates/header.php';
+$url = cleanURL($url);
 
-if(!in_array($group . '.' . $file ,$config['no_auth'])){
-    if(!isset($_SESSION['is_login'])){
-        header("Location:" . base_url . "/auth/login");
-        exit;
+if (is_auth($config, $path)) {
+    if (is_process($config, $path)) {
+        require_once '../htdocs/' . $path . '.php';
+    } else {
+        require_once '../htdocs/templates/header.php';
+    
+        if(!no_menu($config, $path)){
+            require_once '../htdocs/templates/menu.php';
+        }
+        
+        require_once '../htdocs/' . $path . '.php';
+        require_once '../htdocs/templates/footer.php';
     }
-    require_once '../views/templates/menu.php';
+} else {
+    redirect(base_url . '/auth/login');
 }
-
-require_once '../views/' . $group . '/' . $file . '.php';
-
-require_once '../views/templates/footer.php';
