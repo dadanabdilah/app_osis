@@ -1,11 +1,13 @@
 <?php
+  include('../app/config/config.php');
+  include('../app/config/variabel.php');
 	include('../templates/header.php');
 	include('../templates/menu.php')
 ?>
 <div class="container-fluid">
 	<h3 class="text-center">DATA KEPENGURUSAN</h3>
     <h3 class="text-center">OSIS SMK NEGERI 2 KUNINGAN</h3>
-    <h3 class="text-center"><?= tahun_ajaran;?></h3>
+    <h3 class="text-center"><?= tahun_ajaran ?></h3>
     <p class="mt-5">
       <button type="button" class="btn btn-primary btn-sm mb-2 float-right" data-toggle="modal" data-target="#pengurusTambahModal">Tambah</button>
       <a href="hapusAll.php"class="btn btn-danger btn-sm mb-2 float-right mr-2">Hapus Semua</a>
@@ -24,7 +26,6 @@
         </thead>
         <tbody>
             <?php
-            include('../app/config.php');
             $sql_query=mysqli_query($koneksi,"SELECT `jabatan`.`nama_jabatan`,
                                              `pengurus`.`nis`,`pengurus`.`nama`,`pengurus`.`jk`,`pengurus`.`id_jabatan`,`pengurus`.`kelas`
                                               FROM `pengurus`
@@ -77,32 +78,26 @@
             </p>
 
             <p>Jenis Kelamin</br>
-                <input type="radio" value="L"checked" name="TxtJenisKelamin">Laki-Laki
-                <input type="radio" value="P"" name="TxtJenisKelamin">Perempuan
+                <input type="radio" value="L" checked name="TxtJenisKelamin">Laki-Laki
+                <input type="radio" value="P" name="TxtJenisKelamin">Perempuan
             </p>
             
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Jabatan</label>
                 <select class="form-control"name="TxtJabatan">
-                  <option value="">Jabatan</option>
-                  <option value="Ketua Umum">Ketua Umum</option>
-                  <option value="Ketua 1">Ketua 1</option>
-                  <option value="Ketua 1">Ketua 2</option>
-                  <option value="Sekertaris 1">Sekertaris 1</option>
-                  <option value="Sekertaris 2">Sekertaris 2</option>
-                  <option value="Bendahara 1">Bendahara 1</option>
-                  <option value="Bendahara 2">Bendahara 2</option>
-                  <?php
-                    for($awal=J002;$awal<=J002018; $awal++){
-                        echo '<option value="'.$awal.'">Sekbid '.$awal.'</option>';
-                    };
-                  ?>
+                  <option selected disabled>Jabatan</option>
+                  <?php foreach(jabatan as $jabatan): ?>
+                    <option value="<?= str_replace('Sekbid ','', $jabatan) ?>"><?= $jabatan ?></option>
+                  <?php endforeach ?>
                 </select>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Kelas</label>
                 <select class="form-control"name="TxtKelas">
-                    <?=kelas;?>
+                  <option selected disabled>Pilih Kelas</option>
+                    <?php foreach(kelas as $kelas):?>
+                      <option value="<?= $kelas ?>"><?= $kelas ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
           </div>

@@ -1,4 +1,6 @@
 <?php
+    include('../app/config/config.php');
+    include('../app/config/variabel.php');
 	include('../templates/header.php');
 	include('../templates/menu.php');
 ?>
@@ -17,7 +19,6 @@
         <div class="col-lg-6">
         	<?php
 				$nis=$_GET['nis'];
-			    include('../app/config/config.php');
 			    $result=mysqli_query($koneksi,"SELECT * FROM siswa WHERE nis='$nis'");
 			    $data=mysqli_fetch_array($result, MYSQLI_ASSOC);
 			    $data_jenis_planggaran = mysqli_query($koneksi, "SELECT * FROM jenis_pelanggaran");

@@ -1,14 +1,38 @@
 <?php
-    // konfigurasi database
-    $host       =   "localhost";
-    $user       =   "root";
-    $password   =   "";
-    $database   =   "app_osis";
-    // perintah php untuk akses ke database
-    $koneksi = mysqli_connect($host, $user, $password, $database);
-    
-    if($koneksi->connect_error){
-        die("Koneksi gagal");
-    }
+    return [
+        // Halaman default
+        'default' => [
+            'folder' => 'home',
+            'file' => 'index',
+        ],
 
+        // Halaman yang tidek perlu di cek sudah login atau tidaknya
+        'no_auth' => [
+            'auth/login',
+        ],
+
+        // halaman yang dikategorikan sebagai proses
+        'process' => [
+            'auth/proses',
+        ],
+
+        // Halaman yang tidak memerlukan menu bar
+        'no_menu' => [
+            'auth/login',
+        ],
+
+        // Halaman yang memerlukan css
+        'css' => [
+            'auth/login' => [
+                'css-nya'
+            ]
+        ],
+        
+        // Halaman yang memerlukan js
+        'js' => [
+            'auth/login' => [
+                'js-nya'
+            ]
+        ],
+    ];
 ?>

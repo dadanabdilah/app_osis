@@ -1,6 +1,6 @@
 <?php
 // Load file koneksi.php
-include "../app/config.php";
+include "../app/config/config.php";
 
 if(isset($_POST['import'])){ // Jika user mengklik tombol Import
 	$nama_file_baru = 'data.xlsx';

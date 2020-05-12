@@ -1,10 +1,3 @@
-<?php
-	SESSION_START();
-	if(!isset($_SESSION['is_login'])){
-		header("Location:" . base_url . "/login");
-		exit;
-	}
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -33,5 +26,12 @@
 				border: 1px solid #ccc;
 			}
 		</style>
+
+		<!-- <link rel="stylesheet" href="<?= base_url ?>/css/css-nya.css"> -->
+
+		<?php // css berdasarkan folder config ?>
+		<?php foreach ($config['css'][$path] as $value) :?>
+			<link rel="stylesheet" href="<?= base_url . '/css/' . $value ?>.css">
+		<?php endforeach ?>
 	</head>
 	<body>

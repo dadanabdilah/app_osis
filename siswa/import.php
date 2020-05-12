@@ -1,5 +1,6 @@
 <?php
-    include('../app/config.php');
+    include('../app/config/config.php');
+    include('../app/config/variabel.php');
 	include('../templates/header.php');
 	include('../templates/menu.php');
 ?>

@@ -1,5 +1,6 @@
 <?php
-	include('../app/config.php');
+	include('../app/config/config.php');
+	include('../app/config/variabel.php');
     $auth=$_GET['auth'];
     $sql_query=mysqli_query($koneksi,"SELECT * FROM user WHERE autentikasi='$auth'");
     $dataUser=mysqli_fetch_array($sql_query, MYSQLI_ASSOC);

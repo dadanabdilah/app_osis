@@ -1,9 +1,9 @@
 <?php
-    include('../app/config.php');
-    $query=mysqli_query($koneksi,"SELECT * FROM siswa ORDER BY nama ASC");
+  include('../app/config/config.php');
+  include('../app/config/variabel.php');
 	include('../templates/header.php');
 	include('../templates/menu.php');
-?>
+  ?>
 
 <div class="container-fluid">
 	<h3 class="text-center mb-5">DATA SISWA</br>SMK NEGERI 2 KUNINGAN</h3>
@@ -27,6 +27,7 @@
                 </thead>
                 <tbody>
                     <?php
+                        $query=mysqli_query($koneksi,"SELECT * FROM siswa ORDER BY nama ASC");
                         $i=1;
                         foreach ($query as $data) {
                             echo'<tr>
@@ -61,7 +62,10 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Kelas</label>
                 <select class="form-control"name="kelas">
-                    <?=kelas;?>
+                  <option selected disabled>Pilih Kelas</option>
+                  <?php foreach(kelas as $kelas):?>
+                    <option value="<?= $kelas ?>"><?= $kelas ?></option>
+                  <?php endforeach ?>
                 </select>
             </div>
           </div>
@@ -88,7 +92,9 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Kelas</label>
                 <select class="form-control"name="kelas">
-                    <?=kelas;?>
+                  <?php foreach(kelas as $kelas):?>
+                    <option value="<?= $kelas ?>"><?= $kelas ?></option>
+                  <?php endforeach ?>
                 </select>
             </div>
           </div>

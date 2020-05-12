@@ -6,7 +6,7 @@
 	}
 
 	require_once __DIR__ . '/../vendor/autoload.php';
-   	include('../app/config.php');
+   	include('../app/config/config.php');
    	$kelas=$_POST['kelas'];
     $query=mysqli_query($koneksi,"SELECT * FROM siswa WHERE kelas='$kelas' ORDER BY nama ASC");
 

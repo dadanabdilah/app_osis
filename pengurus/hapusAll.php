@@ -1,7 +1,8 @@
 <?php
-	include ('../app/config.php');
+	include ('../app/config/config.php');
+	include ('../app/config/variabel.php');
 	$sqlHapusUser=mysqli_query($koneksi,"DELETE FROM pengurus") or die(mysqli_error($koneksi));
 	
 	echo '<script>alert("Semua data berhasil dihapus!")</script>';
-	header("Location:http://localhost/ngacakan/pengurus");
+	header("Location:" . base_url . "/pengurus");
 ?>
