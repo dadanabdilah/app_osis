@@ -9,6 +9,7 @@ return [
     // Halaman yang tidek perlu di cek sudah login atau tidaknya
     'no_auth' => [
         'auth/login',
+        'auth/proses',
     ],
 
     // halaman yang dikategorikan sebagai proses

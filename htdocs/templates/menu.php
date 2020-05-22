@@ -10,13 +10,13 @@
 			<li class="navbar-item">
 				<a class="nav-link" href="<?= base_url ?>">Home</a>
 			</li>
-			<?php if ($_SESSION['level']=='UL001' || $_SESSION['level']=='UL002'){?>
+			<?php if ($_SESSION['level'] == 'UL001' || $_SESSION['level'] == 'UL002') { ?>
 				<li class="navbar-item">
 					<a class="nav-link" href="<?= base_url ?>/pelanggaran">Input Pelanggar</a>
 				</li>
-		  		<?php }?>
-			
-			<?php if ($_SESSION['level']=='UL001'){?>
+			<?php } ?>
+
+			<?php if ($_SESSION['level'] == 'UL001') { ?>
 
 				<li class="navbar-item">
 					<a class="nav-link" href="<?= base_url ?>/laporan">Laporan</a>
@@ -31,10 +31,10 @@
 					</div>
 				</li>
 
-			<?php }?>
+			<?php } ?>
 
 			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url ?>/logout">Logout</a>
+				<a class="nav-link" href="<?= base_url ?>/auth/logout">Logout</a>
 			</li>
 		</ul>
 	</div>

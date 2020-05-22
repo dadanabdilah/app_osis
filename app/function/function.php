@@ -41,3 +41,17 @@ function cleanURL($url)
 
     return array_values($url);
 }
+
+/** Set pesan flasher */
+function set_pesan(String $pesan)
+{
+    $_SESSION['pesan'] = $pesan;
+}
+
+/** Tampil pesan flasher */
+function tampil_pesan()
+{
+    (isset($_SESSION['pesan'])) ? $pesan = $_SESSION['pesan'] : $pesan = '';
+    unset($_SESSION['pesan']);
+    return $pesan;
+}
