@@ -9,10 +9,6 @@
 				$("#kosong").hide();
 			});
 		</script>
-		<!--data tables-->
-		<script src="<?= base_url; ?>/asset/datatables/js/jquery.dataTables.min.js"></script>
-		<!--jquery untuk export ke excel-->
-		<script src="<?= base_url; ?>/asset/datatables/js/dataTables.bootstrap4.min.js"></script>
 		*/ ?>
 
 		<?php /* <script src="<?= base_url ?>/js/js-nya.js"></script> */ ?>
@@ -22,15 +18,6 @@
 				<script src="<?= base_url . '/js/' . $value ?>.js"></script>
 			<?php endforeach ?>
 		<?php endif ?>
-
-		<?php /*
-		<!--jquery untuk export ke excel-->
-		<script>
-			$(document).ready(function() {
-				$('#tabel_export').DataTable();
-			});
-		</script>
-		*/ ?>
 
 		</body>
 

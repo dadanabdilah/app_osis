@@ -15,6 +15,8 @@ return [
     // halaman yang dikategorikan sebagai proses
     'process' => [
         'auth/proses',
+        'pelanggaran/simpan',
+        'siswa/print',
     ],
 
     // Halaman yang tidak memerlukan menu bar
@@ -34,5 +36,10 @@ return [
         'auth/login' => [
             'js-nya'
         ],
+        'siswa/index' => [
+            'siswa/index',
+            'jquery.dataTables.min',
+            'dataTables.bootstrap4.min'
+        ]
     ],
 ];

@@ -1,9 +1,6 @@
 <?php
 	// index.php
 	require '../asset/phpspreadsheet/vendor/autoload.php';
-	 
-	// login MySQL
-	require '../app/config.php';
 
 	//ambildata
 	$kelas=$_POST['kelas'];
@@ -45,4 +42,3 @@
 	header('Cache-Control: max-age=0');
 	$writer->save("php://output");
 	//$writer->download('jumlah penduduk indonesia.xlsx');
-?>
