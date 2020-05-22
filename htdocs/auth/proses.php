@@ -13,7 +13,7 @@ if ($data = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             $_SESSION['level'] = $data['id_level'];
             $_SESSION['is_login'] = true;
             set_pesan('Selamat datang ' . $data['nama_user']);
-            redirect(base_url . '/home/index');
+            redirect(base_url . '/home');
         } else {
             set_pesan('Akun non aktif!');
             redirect(base_url . '/auth/login');

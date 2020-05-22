@@ -38,8 +38,7 @@ function cleanURL($url)
 {
     unset($url[0]);
     unset($url[1]);
-
-    return array_values($url);
+    return (is_array($url)) ? array_values($url) : [];
 }
 
 /** Set pesan flasher */

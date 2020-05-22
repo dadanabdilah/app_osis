@@ -17,10 +17,11 @@
 
 		<?php /* <script src="<?= base_url ?>/js/js-nya.js"></script> */ ?>
 		<?php /* ^^ Contoh pemanggilan script yang benar */ ?>
-
-		<?php foreach ($config['js'][$path] as $value) : ?>
-			<script src="<?= base_url . '/js/' . $value ?>.js"></script>
-		<?php endforeach ?>
+		<?php if (isset($config['js'][$path])) : ?>
+			<?php foreach ($config['js'][$path] as $value) : ?>
+				<script src="<?= base_url . '/js/' . $value ?>.js"></script>
+			<?php endforeach ?>
+		<?php endif ?>
 
 		<?php /*
 		<!--jquery untuk export ke excel-->

@@ -26,13 +26,13 @@ return [
     'css' => [
         'auth/login' => [
             'css-nya'
-        ]
+        ],
     ],
 
     // Halaman yang memerlukan js
     'js' => [
         'auth/login' => [
             'js-nya'
-        ]
+        ],
     ],
 ];

@@ -34,9 +34,11 @@
 	<?php /* ^^ Contoh pemanggilan css yang benar */ ?>
 
 	<?php /* css berdasarkan folder config */ ?>
-	<?php foreach ($config['css'][$path] as $value) : ?>
-		<link rel="stylesheet" href="<?= base_url . '/css/' . $value ?>.css">
-	<?php endforeach ?>
+	<?php if (isset($config['css'][$path])) : ?>
+		<?php foreach ($config['css'][$path] as $value) : ?>
+			<link rel="stylesheet" href="<?= base_url . '/css/' . $value ?>.css">
+		<?php endforeach ?>
+	<?php endif ?>
 </head>
 
 <body>
