@@ -12,11 +12,16 @@ return [
         'auth/proses',
     ],
 
-    // halaman yang dikategorikan sebagai proses
+    // halaman yang dikategorikan sebagai proses atau tidak membutuhkan template
     'process' => [
         'auth/proses',
         'pelanggaran/simpan',
         'siswa/print',
+        'siswa/hapusAll',
+        'pembina/hapusAll',
+        'pembina/hapus',
+        'pembina/update',
+        'pembina/simpan',
     ],
 
     // Halaman yang tidak memerlukan menu bar
