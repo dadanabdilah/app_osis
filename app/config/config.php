@@ -25,6 +25,10 @@ return [
         'pengurus/hapusAll',
         'pengurus/hapus',
         'pengurus/simpan',
+        'user/hapus',
+        'user/simpan',
+        'user/simpanUpdate',
+        'user/simpanAktivasi',
     ],
 
     // Halaman yang tidak memerlukan menu bar
