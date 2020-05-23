@@ -29,6 +29,7 @@ return [
         'user/simpan',
         'user/simpanUpdate',
         'user/simpanAktivasi',
+        'laporan/print',
     ],
 
     // Halaman yang tidak memerlukan menu bar
