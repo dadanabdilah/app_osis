@@ -22,6 +22,9 @@ return [
         'pembina/hapus',
         'pembina/update',
         'pembina/simpan',
+        'pengurus/hapusAll',
+        'pengurus/hapus',
+        'pengurus/simpan',
     ],
 
     // Halaman yang tidak memerlukan menu bar
