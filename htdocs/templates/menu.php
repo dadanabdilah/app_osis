@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-md bg-info navbar-dark">
-	<a class="navbar-brand" href="<?= base_url ?>/index.php?">
+	<a class="navbar-brand" href="<?= base_url ?>">
 		<!--img class="img-responsive img-thumbnail" src="images/logo.jpg" width="64" height="64" alt="Not Image"-->
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#daftar-menu">
@@ -10,13 +10,13 @@
 			<li class="navbar-item">
 				<a class="nav-link" href="<?= base_url ?>">Home</a>
 			</li>
-			<?php if ($_SESSION['level']=='UL001' || $_SESSION['level']=='UL002'){?>
+			<?php if ($_SESSION['level'] == 'UL001' || $_SESSION['level'] == 'UL002') : ?>
 				<li class="navbar-item">
 					<a class="nav-link" href="<?= base_url ?>/pelanggaran">Input Pelanggar</a>
 				</li>
-		  		<?php }?>
-			
-			<?php if ($_SESSION['level']=='UL001'){?>
+			<?php endif ?>
+
+			<?php if ($_SESSION['level'] == 'UL001') : ?>
 
 				<li class="navbar-item">
 					<a class="nav-link" href="<?= base_url ?>/laporan">Laporan</a>
@@ -31,10 +31,10 @@
 					</div>
 				</li>
 
-			<?php }?>
+			<?php endif ?>
 
 			<li class="nav-item">
-				<a class="nav-link" href="<?= base_url ?>/logout">Logout</a>
+				<a class="nav-link" href="<?= base_url ?>/auth/logout">Logout</a>
 			</li>
 		</ul>
 	</div>
